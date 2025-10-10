@@ -9,9 +9,9 @@ Accurate wireless channel estimation is critical for next-generation communicati
 
 ## Dataset
 
-There is a dataset of two environments and two different frequency bands in the upper mid-band simulated in Wireless Insite. Channel information, where each channel is associated with one array position and contains 25 paths. You can use make_correct_channels.py to make the channel tensors according to the paper for further evaluations. 
+There is a dataset of two environments and two different frequency bands in the upper mid-band simulated in Wireless Insite. Channel information, where each channel is associated with one array position and contains 25 paths. You can use <em> make_correct_channels.py </em> to make the channel tensors according to the paper for further evaluations. 
 
 ## Neural Network
 
-The Python codes for the network design and training are in Model.py and train.py, respectively. If you are using other datasets, you might need to adjust the parameters accordingly. 
+The Python codes for the network design and training are in <em>Model.py</em> and <em>train.py</em>, respectively. If you are using other datasets, you might need to adjust the parameters accordingly. 
 
