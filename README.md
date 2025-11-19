@@ -1,6 +1,7 @@
 # Physics-Informed-Neural-Networks-for-Wireless-Channel-Estimation-with-Limited-Pilot-Signals
 
-Official implementation of **" Physics Informed Neural Networks for Wireless Channel Estimation with Limited Pilot Signals"**.
+Official implementation of **" Physics Informed Neural Networks for Wireless Channel Estimation with Limited Pilot Signals"**. The paper is available in ([here](https://openreview.net/pdf?id=r3plaU6DvW)).  
+
 
 ## 📋 Abstract
 
