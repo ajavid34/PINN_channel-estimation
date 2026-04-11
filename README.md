@@ -322,11 +322,9 @@ a few hours on that GPU.
 If you use this code or dataset, please cite:
 
 ```bibtex
-@inproceedings{javid2025pinn,
-  title     = {Physics-Informed Neural Networks for Wireless Channel Estimation with Limited Pilot Signals},
-  author    = {Javid, Seyed Alireza and Gonz{\'a}lez-Prelcic, Nuria},
-  booktitle = {NeurIPS 2025 Workshop on AI and ML for Next-Generation Wireless Communications and Networking (AI4NextG)},
-  year      = {2025},
-  url       = {https://openreview.net/pdf?id=r3plaU6DvW}
+@inproceedings{javid2025physics,
+  title={Physics-Informed Neural Networks for Wireless Channel Estimation with Limited Pilot Signals},
+  author={Javid, Alireza and Prelcic, Nuria Gonzalez},
+  booktitle={NeurIPS 2025 Workshop: AI and ML for Next-Generation Wireless Communications and Networking}
 }
 ```
