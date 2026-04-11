@@ -1,4 +1,4 @@
-from Model.py import *
+from Model import *
 
 def main_train(config, continue_= None):
     # Check if files exist
@@ -86,7 +86,7 @@ if __name__ == "__main__":
         'smomp_file': 'initial_estimate_ls_snr0.npy',
         'accurate_file': '3D_channel_15GHz_2x2_Pt50.npy',
         'user_positions_file': 'ue_positions_noisy.txt',
-        'rss_image_path': '50.jpg',
+        'rss_image_path': 'Dataset/50_15GHz.jpg',
         'bs_pixel_coords': (287, 293),
         'bs_real_coords': (71.06, 246.29),
         'image_width_meters': 527.5,

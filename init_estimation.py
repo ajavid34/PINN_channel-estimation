@@ -1,5 +1,8 @@
+import argparse
+
 import numpy as np
 from scipy.interpolate import interp1d
+from scipy.linalg import dft
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 
@@ -255,9 +258,9 @@ class LSOFDMChannelEstimator:
         return estimated_channel
 
 
-def create_ls_ofdm_estimates(true_channels_file, output_file, 
-                            N_subcarriers=1024, pilot_spacing=4, 
-                            SNR_dB=10, method='smoothing'):
+def create_ls_ofdm_estimates(true_channels_file, output_file,
+                            N_subcarriers=1024, pilot_spacing=4,
+                            SNR_dB=10, method='basic'):
     """
     Create LS OFDM channel estimates.
     
@@ -415,10 +418,46 @@ class InitialChannelEstimator:
                 
                 # Reconstruct complex channel
                 estimated_channel[tap, rx, :] = interp_magnitude * np.exp(1j * interp_phase)
-                
+
                 # # Add estimation error due to interpolation
-                # interp_error = np.sqrt(noise_power) * (np.random.randn(self.N_tx) + 
+                # interp_error = np.sqrt(noise_power) * (np.random.randn(self.N_tx) +
                 #                                        1j * np.random.randn(self.N_tx))
                 # estimated_channel[tap, rx, :] += 0.5 * interp_error
-        
+
         return estimated_channel
+
+
+def _parse_args():
+    parser = argparse.ArgumentParser(
+        description="Generate LS-OFDM initial channel estimates from ground-truth "
+                    "channels (for the PINN refinement stage)."
+    )
+    parser.add_argument("--true-channels", required=True,
+                        help="Path to the ground-truth channel .npy file "
+                             "(e.g. 3D_channel_15GHz_2x2_Pt50.npy).")
+    parser.add_argument("--output", required=True,
+                        help="Path where the initial-estimate .npy will be saved "
+                             "(e.g. initial_estimate_ls_snr0.npy).")
+    parser.add_argument("--snr", type=float, default=0.0,
+                        help="Signal-to-noise ratio in dB (default: 0).")
+    parser.add_argument("--n-subcarriers", type=int, default=1024,
+                        help="Number of OFDM subcarriers (default: 1024).")
+    parser.add_argument("--pilot-spacing", type=int, default=4,
+                        help="Pilot subcarrier spacing; N_pilots = N_subcarriers / "
+                             "pilot_spacing (default: 4, i.e. 256 pilots).")
+    parser.add_argument("--seed", type=int, default=0,
+                        help="NumPy random seed for reproducibility (default: 0).")
+    return parser.parse_args()
+
+
+if __name__ == "__main__":
+    args = _parse_args()
+    np.random.seed(args.seed)
+    create_ls_ofdm_estimates(
+        true_channels_file=args.true_channels,
+        output_file=args.output,
+        N_subcarriers=args.n_subcarriers,
+        pilot_spacing=args.pilot_spacing,
+        SNR_dB=args.snr,
+        method='basic',
+    )
