@@ -1,7 +1,7 @@
 # Physics-Informed Neural Networks for Wireless Channel Estimation with Limited Pilot Signals
 
 Official implementation of **"Physics-Informed Neural Networks for Wireless
-Channel Estimation with Limited Pilot Signals"**, Seyed Alireza Javid and Nuria
+Channel Estimation with Limited Pilot Signals"**, Alireza Javid and Nuria
 González-Prelcic (UC San Diego), NeurIPS 2025 Workshop *AI and ML for
 Next-Generation Wireless Communications and Networking (AI4NextG)*.
 
