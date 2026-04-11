@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Generated artifacts from the regeneration pipeline
+*.npy
+*.pth
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store
