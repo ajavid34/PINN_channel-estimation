@@ -3,11 +3,11 @@
 Official implementation of **"Physics-Informed Neural Networks for Wireless
 Channel Estimation with Limited Pilot Signals"**, Alireza Javid and Nuria
 González-Prelcic (UC San Diego), NeurIPS 2025 Workshop *AI and ML for
-Next-Generation Wireless Communications and Networking (AI4NextG)*.
+Next-Generation Wireless Communications and Networking (AI4NextG)* and *IEEE Transactions on Machine Learning in Communications and Networking*.
 
 - Paper (OpenReview): <https://openreview.net/pdf?id=r3plaU6DvW>
 - Paper (in-repo copy): [`62_Physics_Informed_Neural_Net.pdf`](./62_Physics_Informed_Neural_Net.pdf)
-
+- Paper (Journal version): <https://ieeexplore.ieee.org/abstract/document/11570128>
 
 ## 📋 Abstract
 
@@ -326,5 +326,16 @@ If you use this code or dataset, please cite:
   title={Physics-Informed Neural Networks for Wireless Channel Estimation with Limited Pilot Signals},
   author={Javid, Alireza and Prelcic, Nuria Gonzalez},
   booktitle={NeurIPS 2025 Workshop: AI and ML for Next-Generation Wireless Communications and Networking}
+}
+```
+and 
+
+```bibtex
+@article{javid2026rss,
+  title={RSS map-assisted MIMO channel estimation in the upper mid-band under pilot constraints},
+  author={Javid, Alireza and Gonz{\'a}lez-Prelcic, Nuria},
+  journal={IEEE Transactions on Machine Learning in Communications and Networking},
+  year={2026},
+  publisher={IEEE}
 }
 ```
